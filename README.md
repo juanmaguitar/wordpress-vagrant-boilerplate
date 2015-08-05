@@ -80,3 +80,23 @@ and then we can do
 
 This command will allow us to `enable livereload` on the plugin, so every time our files change, the browser will be reloaded
 
+
+## Exporting and importing data
+
+To export/import data we have to connect to the vagrant VM through ssh (from the `vagrant` folder of the project)
+
+    vagrant ssh
+
+### Exporting data
+
+Export the data into a `.sql` file in the `sqldump` folder
+
+    mysqldump -u root -proot devdb > /var/sqldump/database.sql
+
+###  Importing Exporting data
+
+Export the data from a `.sql` file in the `sqldump` folder
+
+    mysqldump -u root -proot devdb < /var/sqldump/database.sql
+
+This data will remain in your VM until you destroy it
