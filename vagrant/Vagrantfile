@@ -6,7 +6,7 @@ Vagrant.configure("2") do |config|
     config.vm.provider :virtualbox do |v|
         v.customize ["modifyvm", :id, "--natdnshostresolver1", "on"]
         v.customize ["modifyvm", :id, "--memory", 1024]
-        v.customize ["modifyvm", :id, "--name", "precise64-pixelovers"]
+        v.customize ["modifyvm", :id, "--name", "precise64-WPboilerplate"]
     end
 
     config.vm.synced_folder "../www/wp-content/uploads", "/var/www/wp-content/uploads", mount_options: ["dmode=777", "fmode=777"]
